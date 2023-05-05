@@ -3,6 +3,13 @@ This image lets you monitor your L2TP server and send data to Uptime Kuma.
 It based on Ubuntu 22.04 with installed strongswan and xl2tpd.
 It doesn't keep tunnel up all the time. It tries to connect in a set period of time, ping the resource and then disconnects.
 
+# Tags available
+| Tag | Description |
+| :------------ | :-------------------|
+| latest | The latest version of basic alpine image (1-alpine tag) |
+| 1-alpine | Should be appliable for most use cases |
+| 1-usergate | Comes with proper settings for VPN_IKE and VPN_ESP that will work with default RA VPN profile in UserGate UTM |
+
 # Environment variables
 |  Variable | Description | Default value |
 | ------------- |:-------------| -----:|
