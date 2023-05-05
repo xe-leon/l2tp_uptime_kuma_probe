@@ -106,4 +106,4 @@ Uptime Kuma push sensor settings
 [GNU General Public License v3.0](https://github.com/xe-leon/l2tp_uptime_kuma_probe/blob/master/LICENSE)\
 Based on [ubergarm/l2tp-ipsec-vpn-client](https://hub.docker.com/r/ubergarm/l2tp-ipsec-vpn-client)\
 Works with [Uptime Kuma](https://hub.docker.com/r/louislam/uptime-kuma)\
-Source code of dockerfile availabe on [GitHub](https://github.com/)
+Source code of dockerfile available on [GitHub](https://github.com/)
