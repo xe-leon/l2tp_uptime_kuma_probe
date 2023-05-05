@@ -15,8 +15,8 @@ It doesn't keep tunnel up all the time. It tries to connect in a set period of t
 | MONITOR_ID                       | Monitor ID inside your Uptime Kuma. Can be gathered by creating Push Monitor*  |    No value, must provide|
 | HEARTBEAT_INTERVAL    | Tunnel heartbeat interval in minutes (Should be equal to Uptime Kuma's Heartbeat Interval); Recommended value: not less than 5 minutes |    5 |
 | HEARTBEAT_IP                   | IP address inside VPN network that will be used to ping and report latency to Uptime Kuma; Usually just a gateway host in VPN network |    No value, must provide |
-| VPN_MRU                            | Tunnel MRU  | 1400 |
-| VPN_MTU                            | Tunnel MTU  | 1400 |
+| VPN_MRU                            | Tunnel MRU  | 1410 |
+| VPN_MTU                            | Tunnel MTU  | 1410 |
 | VPN_IKE                               | IKE settings |    aes128-sha1-modp2048 |
 | VPN_ESP                             | ESP settings |    aes128-sha1 |
 
