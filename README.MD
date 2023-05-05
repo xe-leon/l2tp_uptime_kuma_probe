@@ -64,18 +64,19 @@ version: '3.5'
     l2tp_monitor:
       image: xeleon/l2tp_uptime_kuma_probe:latest
       environment:
-        - VPN_SERVER_IP='<IP>'
-        - VPN_IPSEC_PSK='<PSK>'
-        - VPN_USER='<USER>'
+        - VPN_SERVER_IPV4='<IP>'
+        - VPN_PSK='<PSK>'
+        - VPN_USERNAME='<USER>'
         - VPN_PASSWORD='<PASS>'
-        - KUMAIP='uptime_kuma'
+        - REPORT_IP='uptime_kuma'
 #        - PROTO='https'  #optional
-        - MONITORID='<UptimeKumaMonitorID>'
-        - CHECKFREQ='<FrequencyMinutes>'
-        - CHECKEDIP='<IPtoPing>'
-#        - IKEVERSION=1  #optional
-#        - IKE='aes128-sha1-modp2048'  #optional
-#        - ESP='aes128-sha1'  #optional
+        - MONITOR_ID='<UptimeKumaMonitorID>'
+        - HEARTBEAT_INTERVAL='<IntervalInMinutes>'
+        - HEARTBEAT_IP='<IPtoPing>'
+#        - VPN_MRU='1400' #optional
+#        - VPN_MTU='1400' #optional
+#        - VPN_IKE='aes128-sha1-modp2048'  #optional
+#        - VPN_ESP='aes128-sha1'  #optional
       volumes:
         - /lib/modules:/lib/modules:ro
       depends_on:
