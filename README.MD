@@ -10,6 +10,7 @@ It doesn't keep tunnel up all the time. It tries to connect in a set period of t
 | latest | The latest version of basic alpine image (1-alpine tag) |
 | 1-alpine | Should be appliable for most use cases |
 | 1-usergate | Comes with proper settings for VPN_IKE and VPN_ESP that will work with default RA VPN profile in UserGate UTM |
+| 1-nightly | Development builds for testing purposes |
 
 # Environment variables
 |  Variable | Description | Default value |
