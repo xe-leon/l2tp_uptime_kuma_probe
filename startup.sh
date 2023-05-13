@@ -13,7 +13,7 @@ sed -i 's/ike=.*/ike='$VPN_IKE'\n    esp='$VPN_ESP'/' /etc/ipsec.conf
 #refuse-chap
 #refuse-mschap
 #require-pap
-#sed -i 's/require-mschap-v2.*/refuse-chap\nrefuse-mschap\nrefuse-mschap-v2\nrequire-pap/' /etc/ppp/options.l2tpd.client
+
 sed -i 's/require-mschap-v2.*/refuse-chap\nrefuse-mschap\nrequire-pap/' /etc/ppp/options.l2tpd.client
 
 sed -i 's/mru 1410.*/mru '$VPN_MRU'/' /etc/ppp/options.l2tpd.client
@@ -24,5 +24,4 @@ ipsec initnss
 sleep 1
 ipsec pluto --stderrlog --config /etc/ipsec.conf
 sleep 5
-
 exec sh -c ./check.sh
