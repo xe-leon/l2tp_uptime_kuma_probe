@@ -1,6 +1,7 @@
 FROM ubergarm/l2tp-ipsec-vpn-client:latest
 
 LABEL version="1.0"
+LABEL org.opencontainers.image.source https://github.com/xe-leon/l2tp_uptime_kuma_probe
 
 RUN apk update
 RUN apk upgrade
@@ -16,6 +17,7 @@ ENV PROTO='http'
 #ENV MONITOR_ID=''
 ENV HEARTBEAT_INTERVAL='5'
 #ENV HEARTBEAT_IP=''
+#ENV VPN_GATEWAY=''
 
 COPY ./startup.sh .
 RUN chmod +x ./startup.sh

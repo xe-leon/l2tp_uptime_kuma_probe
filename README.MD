@@ -28,7 +28,7 @@ It doesn't keep tunnel up all the time. It tries to connect in a set period of t
 | VPN_MTU                            | Tunnel MTU  | 1410 |
 | VPN_IKE                               | IKE settings |    aes128-sha1-modp2048 |
 | VPN_ESP                             | ESP settings |    aes128-sha1 |
-
+| VPN_GATEWAY                             | Default gateway for VPN network |    No value, must provide |
 
 *Bolded text is what you need: http:\/\/172.0.0.1/api/push/**IjnBFp33cq**?status=...
 
@@ -36,6 +36,7 @@ It doesn't keep tunnel up all the time. It tries to connect in a set period of t
 ## Docker Run
 Setup environment variables for your credentials and config:
 ``` 
+sudo modprobe af_key
 export VPN_SERVER_IPV4='1.2.3.4'
 export VPN_PSK='my pre shared key'
 export VPN_USERNAME='myuser'
@@ -43,6 +44,7 @@ export VPN_PASSWORD='mypass'
 export REPORT_IP='uptimekuma:3001'
 export MONITOR_ID='1a3b5c7d9e'
 export HEARTBEAT_IP='172.16.0.1'
+export VPN_GATEWAY='10.10.10.1'
 ```
 Now run it (you can daemonize of course after debugging):
 ```
@@ -55,6 +57,7 @@ docker run --rm -it --privileged --net=host --name l2tp-monitor-2 \
 -e REPORT_IP \
 -e MONITOR_ID \
 -e HEARTBEAT_IP \
+-e VPN_GATEWAY \
 xeleon/l2tp_uptime_kuma_probe:latest
 ```
 ## Docker Compose
@@ -73,6 +76,7 @@ version: '3.5'
         - MONITOR_ID='<UptimeKumaMonitorID>'
         - HEARTBEAT_INTERVAL='<IntervalInMinutes>'
         - HEARTBEAT_IP='<IPtoPing>'
+        - VPN_GATEWAY='<DefaultGatewayInsideVPN>'
 #        - VPN_MRU='1400' #optional
 #        - VPN_MTU='1400' #optional
 #        - VPN_IKE='aes128-sha1-modp2048'  #optional
