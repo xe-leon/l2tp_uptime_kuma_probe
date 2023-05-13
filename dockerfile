@@ -10,13 +10,14 @@ RUN apk add bc
 
 ENV VPN_ESP='aes128-sha1'
 ENV VPN_IKE='aes128-sha1;modp1024'
-ENV VPN_MTU='1400'
-ENV VPN_MRU='1400'
+ENV VPN_MTU='1410'
+ENV VPN_MRU='1410'
 ENV PROTO='http'
 #ENV REPORT_IP=''
 #ENV MONITOR_ID=''
 ENV HEARTBEAT_INTERVAL='5'
 #ENV HEARTBEAT_IP=''
+#ENV VPN_GATEWAY=''
 
 COPY ./startup.sh .
 RUN chmod +x ./startup.sh
