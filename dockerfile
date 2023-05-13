@@ -17,6 +17,7 @@ ENV PROTO='http'
 #ENV MONITOR_ID=''
 ENV HEARTBEAT_INTERVAL='5'
 #ENV HEARTBEAT_IP=''
+#ENV VPN_GATEWAY=''
 
 COPY ./startup.sh .
 RUN chmod +x ./startup.sh

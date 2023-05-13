@@ -24,6 +24,4 @@ ipsec initnss
 sleep 1
 ipsec pluto --stderrlog --config /etc/ipsec.conf
 sleep 5
-
-#exec sh
 exec sh -c ./check.sh

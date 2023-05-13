@@ -19,6 +19,7 @@ do
   echo "c myVPN" > /var/run/xl2tpd/l2tp-control
   sleep 3
 
+  ip r add ${HEARTBEAT_IP} via ${VPN_GATEWAY} dev ppp0
   echo -e "[${PURPLE}L2TP MONITOR${NC}] TRYING TO ${GREEN}PING${NC} MONITORED IP..."
   ping -c 1 $HEARTBEAT_IP | tail -1 | cut -d '/' -f 4 | xargs -I []  curl -k -s "http://$REPORT_IP/api/push/$MONITOR_ID?status=up&msg=OK&ping=[]"
   sleep 3
